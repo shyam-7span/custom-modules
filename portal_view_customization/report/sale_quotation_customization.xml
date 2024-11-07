@@ -1,12 +1,17 @@
-<odoo> 
+<odoo>
     <template id="sale_report_custom_checkbox" inherit_id="sale.report_saleorder_document">
         <xpath expr="///div[hasclass('clearfix')]" position="after">
             <div t-if="doc.country_id and doc.country_id.name != 'India'" class="mt-4">
                 <t t-if="doc.signature">
                     <div class="mt-4" style="width: 100%;">
                         <label for="check_condition" style="display: inline-block; width: 100%;">
-                            <p style="float:left;"><input type="checkbox" id="check_condition" checked="true" disabled="true" style="vertical-align: middle; margin-right: 5px;"/></p>
-                            <p>I hereby declare that I have not spent an amount exceeding Rs. 7 lakhs on traveling abroad during the financial year till today.</p>                           
+                            <p style="float:left;">
+                                <input type="checkbox" id="check_condition" checked="true"
+                                    disabled="true"
+                                    style="vertical-align: middle; margin-right: 5px;" />
+                            </p>
+                            <p>I hereby declare that I have not spent an amount exceeding Rs. 7
+                                lakhs on traveling abroad during the financial year till today.</p>
 
                         </label>
                     </div>
@@ -14,8 +19,12 @@
                 <t t-else="">
                     <div class="mt-4" style="width: 100%;">
                         <label for="check_condition" style="display: inline-block; width: 100%;">
-                            <p style="float:left;"><input type="checkbox" id="check_condition" style="vertical-align: middle; margin-right: 5px;"/></p>
-                            <p>I hereby declare that I have not spent an amount exceeding Rs. 7 lakhs on traveling abroad during the financial year till today.</p>
+                            <p style="float:left;">
+                                <input type="checkbox" id="check_condition"
+                                    style="vertical-align: middle; margin-right: 5px;" />
+                            </p>
+                            <p>I hereby declare that I have not spent an amount exceeding Rs. 7
+                                lakhs on traveling abroad during the financial year till today.</p>
                         </label>
                     </div>
                 </t>
