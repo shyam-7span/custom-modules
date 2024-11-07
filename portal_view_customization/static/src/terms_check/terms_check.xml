@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <templates xml:space="preserve">
+    <t t-inherit="portal.SignatureForm" t-inherit-mode="extension">
+        <xpath expr="//button[hasclass('o_portal_sign_submit')]" position="replace">
+
+            <t t-if="signature.location != 'India'">
+                <button type="submit" class="o_portal_sign_submit btn btn-primary"
+                                        t-on-click.prevent="onClickSubmit"
+                                        t-att-disabled="!signature.check || signature.isSignatureEmpty ? 'disabled' : ''"
+                                        > 
+
+                                    <i class="fa fa-check me-1"/>
+                                    <t t-esc="sendLabel"/>
+                </button>
+            </t>
+            <t t-if="signature.location == 'India'">
+                <button type="submit" class="o_portal_sign_submit btn btn-primary"
+                                        t-on-click.prevent="onClickSubmit"
+                                        t-att-disabled="signature.isSignatureEmpty ? 'disabled' : ''"
+                                        > 
+
+                                    <i class="fa fa-check me-1"/>
+                                    <t t-esc="sendLabel"/>
+                </button>
+            </t>
+        </xpath>
+    </t>
+</templates> -->
+
+<templates xml:space="preserve">
+    <t t-inherit="portal.SignatureForm" t-inherit-mode="extension">
+        <xpath expr="//button[hasclass('o_portal_sign_submit')]" position="replace">
+            <button type="submit" class="o_portal_sign_submit btn btn-primary"
+                    t-on-click.prevent="onClickSubmit"
+                    t-att-disabled="signature.isSignatureEmpty || (signature.location !== 'India' &amp;&amp; !signature.check) ? 'disabled' : ''">
+                <i class="fa fa-check me-1"/>
+                <t t-esc="sendLabel"/>
+            </button>
+        </xpath>
+    </t>
+</templates>
