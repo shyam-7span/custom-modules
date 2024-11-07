@@ -3,26 +3,32 @@
     <record id="view_order_form_inherit_ld" model="ir.ui.view">
         <field name="name">sale.order.form.inherit.ld</field>
         <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='sale_order_template_id']" position="before">
-                <field name="country_id" string=" Destination Country"/>
+                <field name="country_id" string=" Destination Country" />
             </xpath>
         </field>
     </record>
-    <template id="sale_portal_customization" name="Portal Customization" inherit_id="sale.sale_order_portal_template">
-        <xpath expr="//div[@id='quote_content']//div[@role='dialog' and @id='modalaccept']//main[@class='modal-body']//li[span[contains(text(), 'With payment terms:')]]" position="after">
+    <template id="sale_portal_customization" name="Portal Customization"
+        inherit_id="sale.sale_order_portal_template">
+        <xpath
+            expr="//div[@id='quote_content']//div[@role='dialog' and @id='modalaccept']//main[@class='modal-body']//li[span[contains(text(), 'With payment terms:')]]"
+            position="after">
             <div t-if="sale_order.country_id">
                 <t t-if="sale_order.country_id and sale_order.country_id.name != 'India'">
                     <label for="check_condition">
-                        <input type="checkbox" id="check_condition" name="terms_agreed" />
-                        I hereby declare that I have not spent an amount exceeding Rs. 7 lakhs on traveling abroad during the financial year till today.                    </label>
-                    
+                        <input type="checkbox" id="check_condition" name="terms_agreed" /> I hereby
+                        declare that I have not spent an amount exceeding Rs. 7 lakhs on traveling
+                        abroad during the financial year till today. </label>
+
                 </t>
-                    <input type="text" id="locationId"  class="d-none" t-att-value="sale_order.country_id.name" />
+                <input type="text" id="locationId" class="d-none"
+                    t-att-value="sale_order.country_id.name" />
 
                 <t t-if="sale_order.country_id.name == 'India'">
-                    <input type="checkbox" id="check_condition1" class="d-none" checked="true" name="terms_agreed" value="true" />
+                    <input type="checkbox" id="check_condition1" class="d-none" checked="true"
+                        name="terms_agreed" value="true" />
                 </t>
             </div>
         </xpath>
