@@ -20,7 +20,7 @@
                     <label for="check_condition">
                         <input type="checkbox" id="check_condition" name="terms_agreed" /> I hereby
                         declare that I have not spent an amount exceeding Rs. 7 lakhs on traveling
-                        abroad during the financial year till today. </label>
+                        abroad during the financial year till yesterday. </label>
 
                 </t>
                 <input type="text" id="locationId" class="d-none"
